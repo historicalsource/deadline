@@ -481,17 +481,16 @@ a day to search the ground in great detail." CR>)>)
 		      (<FRESH-AIR? ,HERE> <RTRUE>)
 		      (T <TELL "The air is rather musty here." CR>)>)>>
 
-<ROUTINE FRESH-AIR? (RM "AUX" P L T O)
-	 #DECL ((RM O) OBJECT (P L) FIX)
+<ROUTINE FRESH-AIR? (RM "AUX" P L TX O)
 	 <SET P 0>
 	 <REPEAT ()
 		 <COND (<0? <SET P <NEXTP ,HERE .P>>>
 			<RFALSE>)
 		       (<NOT <L? .P ,LOW-DIRECTION>>
-			<SET T <GETPT ,HERE .P>>
-			<SET L <PTSIZE .T>>
+			<SET TX <GETPT ,HERE .P>>
+			<SET L <PTSIZE .TX>>
 			<COND (<AND <EQUAL? .L ,DEXIT>
-				    <FSET? <SET O <GETB .T ,DEXITOBJ>>
+				    <FSET? <SET O <GETB .TX ,DEXITOBJ>>
 					   ,OPENBIT>>
 			       <TELL
 "There is a pleasant breeze coming through the " D .O "." CR>
@@ -676,7 +675,7 @@ to himself.">)
 "He replies with a brief nod, and then starts mumbling to himself
 about the " <PICK-ONE ,GARDEN-MUMBLES> "." CR>)>)
 	       (<==? ,WINNER ,GARDENER>
-		<COND (<AND <VERB? SHOW>
+		<COND (<AND <VERB? SHOW SSHOW>
 			    <OR <EQUAL? ,PRSI ,GLOBAL-HOLE ,HOLE>
 				<EQUAL? ,PRSI ,GLOBAL-ROSES ,ROSE>>>
 		       <COND (<AND <NOT ,HOLE-TELL> <NOT ,G-I-G>>
@@ -1474,7 +1473,7 @@ written on the previous sheet." CR>)
 	 <SETG NOTE-READ T>
 	 <TELL .STR
 " reveals impressions left by writing on the previous sheet. The writer must
-borne down heavily, but only a few words come out clearly:|
+have borne down heavily, but only a few words come out clearly:|
 |
   Baxter,|
 |
@@ -2835,7 +2834,7 @@ you probably have better things to do." CR>)>>
 	       (<VERB? EXAMINE LOOK-INSIDE>
 		<TELL
 "You have stooped to a new low, snooping around toilet bowls. Wait! Something
-catches your eye--was it the Tidy-Bowl man? Is he the murderer?  Naw..." CR>)
+catches your eye--was it the Tidy-Bowl man? Is he the murderer? Naw..." CR>)
 	       (<VERB? FLUSH>
 		<TELL "Whhoooossshhhhh!" CR>)>>
 
@@ -3824,7 +3823,9 @@ balcony is in good repair, but a few spots of dried mud soil the floor." CR>)>>
 It is in good repair and is quite clean." CR>)>>
 
 <ROUTINE GLOBAL-ROOM-F ("AUX" TIM)
-	 <COND (<VERB? KNOCK>
+	 <COND (<VERB? THROUGH>
+		<V-WALK-AROUND>)
+	       (<VERB? KNOCK>
 		<COND (<==? ,HERE ,UPSTAIRS-CLOSET>
 		       <TELL
 "The wall to the north here sounds unusually hollow." CR>)
@@ -4184,6 +4185,7 @@ down." CR>
 		      (T <TELL "The stereo is now off." CR>)>
 		<SETG STEREO-ON <>>
 		<SETG TUNE-ON <>>
+		<QUEUE I-TUNE-OFF 0>	;"Glitch from Electronic Games 10/84"
 		<RTRUE>)
 	       (<VERB? TURN-UP>
 		<COND (,TUNE-ON

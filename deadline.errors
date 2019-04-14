@@ -1,0 +1,56 @@
+Assembling DEADLINE.XZAP.3
+Release: 28
+
+    64	Inserting DEADLINEFREQ.XZAP.2	   (642 bytes)
+   706	Inserting DEADLINEDAT.ZAP.1	 (19031 bytes)
+ 19737	Inserting DUNGEON.ZAP.1	     (0 bytes)
+ 19737	Inserting SYNTAX.ZAP.1
+*****	ENDLOD::
+19737?	Multiply defined global label
+	     (0 bytes)
+ 19737	Inserting MACROS.ZAP.1	    (29 bytes)
+ 19766	Inserting CLOCK.ZAP.1	   (379 bytes)
+ 20145	Inserting MAIN.ZAP.1	   (948 bytes)
+ 21093	Inserting PARSER.ZAP.1	  (5138 bytes)
+ 26231	Inserting CRUFTY.XZAP.1	    (79 bytes)
+ 26310	Inserting VERBS.ZAP.1	 (12384 bytes)
+ 38694	Inserting ACTIONS.ZAP.1	 (55128 bytes)
+ 93822	Inserting GOAL.ZAP.1	  (3915 bytes)
+ 97737	Inserting DEADLINESTR.ZAP.1	 (10683 bytes)
+
+W?. global undefined:  23754, 22363, 22301, 21863, 21628, 21537, 21513
+
+
+Symbols unused:
+SERIAL
+STR?90
+STR?89
+ANALYSIS-PRINT
+V-DIG-AROUND
+V-SEND
+V-ZORK
+V-DIG
+PRE-DIG
+V-PUMP
+PRE-FILL
+PRE-DROP
+GO-NEXT
+LIT?
+DEMON
+ZPROB
+BIGFIX
+GWIM-DISABLE
+DEAD
+HO-HUMS
+WILL-READY
+POOL-OF-BLOOD
+
+
+255 objects.
+198 globals.
+
+108420 bytes (106K).
+ 19737 bytes of preload.
+
+Preload 2329 bytes too large for BBC Acorn.
+

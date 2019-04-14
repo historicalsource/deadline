@@ -918,7 +918,7 @@ questions which cannot be asked directly." CR>
 
 <ROUTINE WHICH-PRINT (TLEN LEN TBL "AUX" OBJ RLEN)
 	 <SET RLEN .LEN>
-	 <TELL "Which ">
+	 <TELL "Which">
          <COND (<OR ,P-OFLAG ,P-MERGED> <TELL " "> <PRINTB ,P-NAM>)
 	       (<==? .TBL ,P-PRSO>
 		<CLAUSE-PRINT ,P-NC1 ,P-NC1L <>>)

@@ -1508,7 +1508,7 @@ down.")>
 	(ADJECTIVE DRIED)
 	(FLAGS NDESCBIT INVISIBLE)
 	(TEXT
-"The spots seem to be dried dirt or mud and are bunched in the area between
+"The spots, which seem to be dried dirt or mud, are in the area between
 the balcony and the desk.")>
 
 <OBJECT SINK

@@ -257,18 +257,17 @@
 	 <MOVE .PERSON .WHERE>
 	 .FLG>
 
-<ROUTINE DIR-FROM (HERE THERE "AUX" P L T O)
-	 #DECL ((HERE THERE O) OBJECT (P L) FIX)
+<ROUTINE DIR-FROM (HERE THERE "AUX" P L TX O)
 	 <SET P 0>
 	 <REPEAT ()
 		 <COND (<0? <SET P <NEXTP .HERE .P>>>
 			<RFALSE>)
 		       (<EQUAL? .P ,P?IN ,P?OUT> T)
 		       (<NOT <L? .P ,LOW-DIRECTION>>
-			<SET T <GETPT .HERE .P>>
-			<SET L <PTSIZE .T>>
+			<SET TX <GETPT .HERE .P>>
+			<SET L <PTSIZE .TX>>
 			<COND (<AND <EQUAL? .L ,DEXIT ,UEXIT ,CEXIT>
-				    <==? <GETB .T ,REXIT> .THERE>>
+				    <==? <GETB .TX ,REXIT> .THERE>>
 			       <RETURN .P>)>)>>>
 
 <ROUTINE COR-DIR (HERE THERE "AUX" COR RM (PAST 0) (CNT 2))
