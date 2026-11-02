@@ -1,0 +1,29 @@
+{
+  "game": {
+    "interface": "players receive observe('detective') and legal_actions('detective'); engine validates every submitted step",
+    "successful_action_limit": 30,
+    "default_model_call_limit": 60,
+    "default_call_timeout_ms": 60000
+  },
+  "model_player": {
+    "entrypoint": "players/model-player.js",
+    "providers": ["openai", "anthropic", "gemini"],
+    "inputs": ["player-visible observation", "legal action strings"],
+    "tools": [],
+    "filesystem_access": false,
+    "shell_access": false,
+    "hidden_state_access": false,
+    "evaluator_access": false,
+    "answer_key_access": false
+  },
+  "baseline": {
+    "entrypoint": "players/baseline.js",
+    "policy": "fixed evidence-first priority order",
+    "interface": "same observations, legal_actions, and step validation as model player"
+  },
+  "implementation_skill": "skills/deadline-midterm/SKILL.md",
+  "independent_review": {
+    "status": "not yet performed",
+    "artifact": "review.md"
+  }
+}

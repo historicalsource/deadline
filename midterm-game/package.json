@@ -1,0 +1,17 @@
+{
+  "name": "deadline-midterm-game",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "test": "node --test",
+    "play:baseline": "node players/run.js --provider baseline",
+    "play:model": "node players/run.js --provider openai",
+    "playtest": "node players/playtest.js"
+  },
+  "devDependencies": {
+    "vite": "^6.4.1"
+  }
+}
