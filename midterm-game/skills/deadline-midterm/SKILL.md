@@ -27,7 +27,9 @@ characters, endings, clues, or changed conditions on your own.
 - Keep the implementation inside `deadline/midterm-game/`.
 - Keep all authoritative state in the engine. Expose equivalents of
   `reset(seed)`, `observe(player_id)`, `legal_actions(player_id)`,
-  `step(player_id, action)`, and `outcome()`.
+  `step(player_id, action)`, and `outcome()`. Retain `legal_actions()` for
+  engine-level inspection and deterministic tests, but do not show its output
+  to a human player, model player, baseline, or playtest console.
 - Invalid actions return a brief reason and leave game state and successful
   action count unchanged. Count submitted calls separately; cap successful
   actions at 30, model calls at a configurable 60 by default, and each model
@@ -36,12 +38,19 @@ characters, endings, clues, or changed conditions on your own.
   clue dependencies, interviews, evidence confrontations, accusation choices,
   and endings from the action dictionary. The complete joint accusation needs
   every listed clue group.
-- Keep observations and legal actions player-visible. Do not return hidden
+- Keep observations player-visible, including the currently available action
+  words (command heads) only. A browser player may select one head and type
+  the remainder; do not provide targets, complete commands, autocomplete, or
+  full legal-action lists. Machine players receive the same action-word heads
+  with their observation and infer the remainder. Return a concise reason for
+  rejected guesses so a player can infer from feedback. Do not return hidden
   truth, evaluator state, source files, or answer-key fields to a player.
 - Keep model-player code separate from engine code. The model may submit only
-  a selected member of the supplied legal-action list and receive only the
-  supplied observation and actions. No file, shell, or evaluator tools.
-- Use the same engine interface for the deterministic baseline.
+  a guessed action based on the player observation, action-word heads, and
+  visible feedback from its previous attempt. The engine validates it. No
+  file, shell, or evaluator tools, and no complete legal-action list.
+- Use the same observation, feedback, and engine validation for the
+  deterministic baseline; it must not inspect `legal_actions()`.
 - Write all narrative anew. Credit the source game; do not copy its code,
   dialogue, compiled game, assets, or expressive text.
 - Verify claims by running commands. Do not claim tests, live provider trials,

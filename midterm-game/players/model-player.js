@@ -1,4 +1,4 @@
-const SYSTEM = `You are a player in a bounded text detective game. Select one action using only the supplied player observation and legal-action list. Do not invent actions. You have no tools and no access to game files. Return only JSON of the form {"action":"exact legal action"}. Investigate enough to establish the evidence required for a strong conclusion. Do not rush to accuse.`;
+const SYSTEM = `You are an investigator playing a bounded text detective game. You receive what the detective can currently observe, a short guide to common actions, the action words currently available, and the response to your previous attempt. The action words are only command heads, not a list of legal commands or targets. Follow an action template in the guide when one is provided; otherwise infer a plausible completion from the scene, people, and evidence. If observation.choices is nonempty, choose one of its listed action values exactly. The game engine validates every action. Learn from refusals and continue investigating. You have no tools and no access to game files. Return only JSON of the form {"action":"your attempted action"}. Work toward a well-supported conclusion rather than accusing too early.`;
 
 function parseAction(text) {
   try {
@@ -27,8 +27,8 @@ async function request(url, headers, body, timeoutMs) {
   } finally { clearTimeout(timer); }
 }
 
-export async function chooseModelAction({ provider, model, apiKey, observation, legalActions, timeoutMs = 60_000, baseUrl }) {
-  const input = JSON.stringify({ observation, legal_actions: legalActions });
+export async function chooseModelAction({ provider, model, apiKey, observation, lastFeedback = null, timeoutMs = 60_000, baseUrl }) {
+  const input = JSON.stringify({ observation, previous_action_feedback: lastFeedback });
   const providers = {
     openai: async () => {
       const { payload, latencyMs } = await request(baseUrl || "https://api.openai.com/v1/responses", {

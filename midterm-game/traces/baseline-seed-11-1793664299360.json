@@ -1,0 +1,2270 @@
+{
+  "seed": 11,
+  "provider": "baseline",
+  "model": "fixed-evidence-policy",
+  "maxActions": 30,
+  "maxCalls": 60,
+  "timeoutMs": 60000,
+  "calls": [
+    {
+      "observation": {
+        "player": "detective",
+        "room": "living room",
+        "roomText": "Four residents wait under the watch of a uniformed patrol officer. Mrs. Robner looks tense. The officer remains with the group while you investigate.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "interview",
+          "ask"
+        ],
+        "interviewee": null,
+        "letterDelivered": false,
+        "evidence": [],
+        "history": [],
+        "successfulActions": 0,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": null,
+      "action": "interview Baxter privately",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 1,
+        "submittedCalls": 1
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "return",
+          "search",
+          "ask"
+        ],
+        "interviewee": "Baxter",
+        "letterDelivered": false,
+        "evidence": [],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 1,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "interview Baxter privately",
+        "valid": true,
+        "message": "Baxter agrees to speak privately in the Library. The officer stays with the others."
+      },
+      "action": "ask Baxter about concert",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 2,
+        "submittedCalls": 2
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "return",
+          "search",
+          "ask"
+        ],
+        "interviewee": "Baxter",
+        "letterDelivered": false,
+        "evidence": [],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 2,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "ask Baxter about concert",
+        "valid": true,
+        "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”"
+      },
+      "action": "return Baxter to living room",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 3,
+        "submittedCalls": 3
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "living room",
+        "roomText": "Four residents wait under the watch of a uniformed patrol officer. Mrs. Robner looks tense. The officer remains with the group while you investigate.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "read",
+          "search",
+          "interview",
+          "ask"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          }
+        ],
+        "successfulActions": 3,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "return Baxter to living room",
+        "valid": true,
+        "message": "Baxter returns to the officer and the group. A delivered letter is on the table."
+      },
+      "action": "interview Dunbar privately",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 4,
+        "submittedCalls": 4
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "return",
+          "search",
+          "ask"
+        ],
+        "interviewee": "Dunbar",
+        "letterDelivered": true,
+        "evidence": [],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 4,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "interview Dunbar privately",
+        "valid": true,
+        "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others."
+      },
+      "action": "ask Dunbar about concert",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 5,
+        "submittedCalls": 5
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "return",
+          "search",
+          "ask"
+        ],
+        "interviewee": "Dunbar",
+        "letterDelivered": true,
+        "evidence": [],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 5,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "ask Dunbar about concert",
+        "valid": true,
+        "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”"
+      },
+      "action": "search Dunbar",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 6,
+        "submittedCalls": 6
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "return",
+          "search",
+          "ask",
+          "show"
+        ],
+        "interviewee": "Dunbar",
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 6,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "search Dunbar",
+        "valid": true,
+        "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings."
+      },
+      "action": "return Dunbar to living room",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 7,
+        "submittedCalls": 7
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "living room",
+        "roomText": "Four residents wait under the watch of a uniformed patrol officer. Mrs. Robner looks tense. The officer remains with the group while you investigate.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "read",
+          "search",
+          "interview",
+          "ask",
+          "show"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          }
+        ],
+        "successfulActions": 7,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "return Dunbar to living room",
+        "valid": true,
+        "message": "Dunbar returns to the officer and the group. A delivered letter is on the table."
+      },
+      "action": "go to library",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "You enter the library.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 8,
+        "submittedCalls": 8
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 8,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "go to library",
+        "valid": true,
+        "message": "You enter the library."
+      },
+      "action": "inspect notepad",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 9,
+        "submittedCalls": 9
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "shade"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 9,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "inspect notepad",
+        "valid": true,
+        "message": "The page looks blank, but shallow pressure marks remain in the paper."
+      },
+      "action": "shade notepad with pencil",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Shading the page reveals impressions left by writing on the previous sheet. The writer pressed hard, but only fragments are legible: ‘Baxter,’ ‘merg...,’ ‘Omnidyne,’ ‘Focus,’ and ‘recons...’.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 10,
+        "submittedCalls": 10
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "shade"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Shading the page reveals impressions left by writing on the previous sheet. The writer pressed hard, but only fragments are legible: ‘Baxter,’ ‘merg...,’ ‘Omnidyne,’ ‘Focus,’ and ‘recons...’.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 10,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "shade notepad with pencil",
+        "valid": true,
+        "message": "Shading the page reveals impressions left by writing on the previous sheet. The writer pressed hard, but only fragments are legible: ‘Baxter,’ ‘merg...,’ ‘Omnidyne,’ ‘Focus,’ and ‘recons...’."
+      },
+      "action": "inspect bookcase",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "The books are carefully arranged. One section is slightly out of line.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 11,
+        "submittedCalls": 11
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "shade"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Shading the page reveals impressions left by writing on the previous sheet. The writer pressed hard, but only fragments are legible: ‘Baxter,’ ‘merg...,’ ‘Omnidyne,’ ‘Focus,’ and ‘recons...’.",
+            "room": "library"
+          },
+          {
+            "action": "inspect bookcase",
+            "message": "The books are carefully arranged. One section is slightly out of line.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 11,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "inspect bookcase",
+        "valid": true,
+        "message": "The books are carefully arranged. One section is slightly out of line."
+      },
+      "action": "search bookcase",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Behind the shifted books you find a concealed safe.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 12,
+        "submittedCalls": 12
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "shade",
+          "open"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Shading the page reveals impressions left by writing on the previous sheet. The writer pressed hard, but only fragments are legible: ‘Baxter,’ ‘merg...,’ ‘Omnidyne,’ ‘Focus,’ and ‘recons...’.",
+            "room": "library"
+          },
+          {
+            "action": "inspect bookcase",
+            "message": "The books are carefully arranged. One section is slightly out of line.",
+            "room": "library"
+          },
+          {
+            "action": "search bookcase",
+            "message": "Behind the shifted books you find a concealed safe.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 12,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "search bookcase",
+        "valid": true,
+        "message": "Behind the shifted books you find a concealed safe."
+      },
+      "action": "open safe",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "The safe holds two documents: papers about Baxter's involvement in the Focus scandal, and a new will that leaves George nothing and gives Robner's estate to his wife.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 13,
+        "submittedCalls": 13
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "shade",
+          "open",
+          "read"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo",
+          "Focus papers",
+          "new will"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Shading the page reveals impressions left by writing on the previous sheet. The writer pressed hard, but only fragments are legible: ‘Baxter,’ ‘merg...,’ ‘Omnidyne,’ ‘Focus,’ and ‘recons...’.",
+            "room": "library"
+          },
+          {
+            "action": "inspect bookcase",
+            "message": "The books are carefully arranged. One section is slightly out of line.",
+            "room": "library"
+          },
+          {
+            "action": "search bookcase",
+            "message": "Behind the shifted books you find a concealed safe.",
+            "room": "library"
+          },
+          {
+            "action": "open safe",
+            "message": "The safe holds two documents: papers about Baxter's involvement in the Focus scandal, and a new will that leaves George nothing and gives Robner's estate to his wife.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 13,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "open safe",
+        "valid": true,
+        "message": "The safe holds two documents: papers about Baxter's involvement in the Focus scandal, and a new will that leaves George nothing and gives Robner's estate to his wife."
+      },
+      "action": "read Focus papers",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "The papers document Baxter's embezzlement of Focus funds and the company's effort to hush up the scandal. Robner's records describe how the matter was handled.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 14,
+        "submittedCalls": 14
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "shade",
+          "open",
+          "read"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo",
+          "Focus papers",
+          "new will"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Shading the page reveals impressions left by writing on the previous sheet. The writer pressed hard, but only fragments are legible: ‘Baxter,’ ‘merg...,’ ‘Omnidyne,’ ‘Focus,’ and ‘recons...’.",
+            "room": "library"
+          },
+          {
+            "action": "inspect bookcase",
+            "message": "The books are carefully arranged. One section is slightly out of line.",
+            "room": "library"
+          },
+          {
+            "action": "search bookcase",
+            "message": "Behind the shifted books you find a concealed safe.",
+            "room": "library"
+          },
+          {
+            "action": "open safe",
+            "message": "The safe holds two documents: papers about Baxter's involvement in the Focus scandal, and a new will that leaves George nothing and gives Robner's estate to his wife.",
+            "room": "library"
+          },
+          {
+            "action": "read Focus papers",
+            "message": "The papers document Baxter's embezzlement of Focus funds and the company's effort to hush up the scandal. Robner's records describe how the matter was handled.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 14,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "read Focus papers",
+        "valid": true,
+        "message": "The papers document Baxter's embezzlement of Focus funds and the company's effort to hush up the scandal. Robner's records describe how the matter was handled."
+      },
+      "action": "go to kitchen",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "You enter the kitchen.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 15,
+        "submittedCalls": 15
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "kitchen",
+        "roomText": "The hand-painted tea service is kept here, on shelves with the household china.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "count"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo",
+          "Focus papers",
+          "new will"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Shading the page reveals impressions left by writing on the previous sheet. The writer pressed hard, but only fragments are legible: ‘Baxter,’ ‘merg...,’ ‘Omnidyne,’ ‘Focus,’ and ‘recons...’.",
+            "room": "library"
+          },
+          {
+            "action": "inspect bookcase",
+            "message": "The books are carefully arranged. One section is slightly out of line.",
+            "room": "library"
+          },
+          {
+            "action": "search bookcase",
+            "message": "Behind the shifted books you find a concealed safe.",
+            "room": "library"
+          },
+          {
+            "action": "open safe",
+            "message": "The safe holds two documents: papers about Baxter's involvement in the Focus scandal, and a new will that leaves George nothing and gives Robner's estate to his wife.",
+            "room": "library"
+          },
+          {
+            "action": "read Focus papers",
+            "message": "The papers document Baxter's embezzlement of Focus funds and the company's effort to hush up the scandal. Robner's records describe how the matter was handled.",
+            "room": "library"
+          },
+          {
+            "action": "go to kitchen",
+            "message": "You enter the kitchen.",
+            "room": "kitchen"
+          }
+        ],
+        "successfulActions": 15,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "go to kitchen",
+        "valid": true,
+        "message": "You enter the kitchen."
+      },
+      "action": "count china",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "There are eight large and small plates, seven saucers, and six cups.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 16,
+        "submittedCalls": 16
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "kitchen",
+        "roomText": "The hand-painted tea service is kept here, on shelves with the household china.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "count"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo",
+          "Focus papers",
+          "new will"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Shading the page reveals impressions left by writing on the previous sheet. The writer pressed hard, but only fragments are legible: ‘Baxter,’ ‘merg...,’ ‘Omnidyne,’ ‘Focus,’ and ‘recons...’.",
+            "room": "library"
+          },
+          {
+            "action": "inspect bookcase",
+            "message": "The books are carefully arranged. One section is slightly out of line.",
+            "room": "library"
+          },
+          {
+            "action": "search bookcase",
+            "message": "Behind the shifted books you find a concealed safe.",
+            "room": "library"
+          },
+          {
+            "action": "open safe",
+            "message": "The safe holds two documents: papers about Baxter's involvement in the Focus scandal, and a new will that leaves George nothing and gives Robner's estate to his wife.",
+            "room": "library"
+          },
+          {
+            "action": "read Focus papers",
+            "message": "The papers document Baxter's embezzlement of Focus funds and the company's effort to hush up the scandal. Robner's records describe how the matter was handled.",
+            "room": "library"
+          },
+          {
+            "action": "go to kitchen",
+            "message": "You enter the kitchen.",
+            "room": "kitchen"
+          },
+          {
+            "action": "count china",
+            "message": "There are eight large and small plates, seven saucers, and six cups.",
+            "room": "kitchen"
+          }
+        ],
+        "successfulActions": 16,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "count china",
+        "valid": true,
+        "message": "There are eight large and small plates, seven saucers, and six cups."
+      },
+      "action": "go to garden",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "You enter the garden.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 17,
+        "submittedCalls": 17
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "garden",
+        "roomText": "Rows of roses fill the garden beside the house.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo",
+          "Focus papers",
+          "new will"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Shading the page reveals impressions left by writing on the previous sheet. The writer pressed hard, but only fragments are legible: ‘Baxter,’ ‘merg...,’ ‘Omnidyne,’ ‘Focus,’ and ‘recons...’.",
+            "room": "library"
+          },
+          {
+            "action": "inspect bookcase",
+            "message": "The books are carefully arranged. One section is slightly out of line.",
+            "room": "library"
+          },
+          {
+            "action": "search bookcase",
+            "message": "Behind the shifted books you find a concealed safe.",
+            "room": "library"
+          },
+          {
+            "action": "open safe",
+            "message": "The safe holds two documents: papers about Baxter's involvement in the Focus scandal, and a new will that leaves George nothing and gives Robner's estate to his wife.",
+            "room": "library"
+          },
+          {
+            "action": "read Focus papers",
+            "message": "The papers document Baxter's embezzlement of Focus funds and the company's effort to hush up the scandal. Robner's records describe how the matter was handled.",
+            "room": "library"
+          },
+          {
+            "action": "go to kitchen",
+            "message": "You enter the kitchen.",
+            "room": "kitchen"
+          },
+          {
+            "action": "count china",
+            "message": "There are eight large and small plates, seven saucers, and six cups.",
+            "room": "kitchen"
+          },
+          {
+            "action": "go to garden",
+            "message": "You enter the garden.",
+            "room": "garden"
+          }
+        ],
+        "successfulActions": 17,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "go to garden",
+        "valid": true,
+        "message": "You enter the garden."
+      },
+      "action": "inspect holes",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "There are two holes in the soft earth, each about two inches by four inches and at least three inches deep. The soil around them is compacted.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 18,
+        "submittedCalls": 18
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "garden",
+        "roomText": "Rows of roses fill the garden beside the house.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo",
+          "Focus papers",
+          "new will"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Shading the page reveals impressions left by writing on the previous sheet. The writer pressed hard, but only fragments are legible: ‘Baxter,’ ‘merg...,’ ‘Omnidyne,’ ‘Focus,’ and ‘recons...’.",
+            "room": "library"
+          },
+          {
+            "action": "inspect bookcase",
+            "message": "The books are carefully arranged. One section is slightly out of line.",
+            "room": "library"
+          },
+          {
+            "action": "search bookcase",
+            "message": "Behind the shifted books you find a concealed safe.",
+            "room": "library"
+          },
+          {
+            "action": "open safe",
+            "message": "The safe holds two documents: papers about Baxter's involvement in the Focus scandal, and a new will that leaves George nothing and gives Robner's estate to his wife.",
+            "room": "library"
+          },
+          {
+            "action": "read Focus papers",
+            "message": "The papers document Baxter's embezzlement of Focus funds and the company's effort to hush up the scandal. Robner's records describe how the matter was handled.",
+            "room": "library"
+          },
+          {
+            "action": "go to kitchen",
+            "message": "You enter the kitchen.",
+            "room": "kitchen"
+          },
+          {
+            "action": "count china",
+            "message": "There are eight large and small plates, seven saucers, and six cups.",
+            "room": "kitchen"
+          },
+          {
+            "action": "go to garden",
+            "message": "You enter the garden.",
+            "room": "garden"
+          },
+          {
+            "action": "inspect holes",
+            "message": "There are two holes in the soft earth, each about two inches by four inches and at least three inches deep. The soil around them is compacted.",
+            "room": "garden"
+          }
+        ],
+        "successfulActions": 18,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "inspect holes",
+        "valid": true,
+        "message": "There are two holes in the soft earth, each about two inches by four inches and at least three inches deep. The soil around them is compacted."
+      },
+      "action": "search holes",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Digging in the soft earth, you cut your finger on a sharp edge and find a piece of porcelain covered in dirt and dried mud.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 19,
+        "submittedCalls": 19
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "garden",
+        "roomText": "Rows of roses fill the garden beside the house.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "clean"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo",
+          "Focus papers",
+          "new will",
+          "fragment"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Shading the page reveals impressions left by writing on the previous sheet. The writer pressed hard, but only fragments are legible: ‘Baxter,’ ‘merg...,’ ‘Omnidyne,’ ‘Focus,’ and ‘recons...’.",
+            "room": "library"
+          },
+          {
+            "action": "inspect bookcase",
+            "message": "The books are carefully arranged. One section is slightly out of line.",
+            "room": "library"
+          },
+          {
+            "action": "search bookcase",
+            "message": "Behind the shifted books you find a concealed safe.",
+            "room": "library"
+          },
+          {
+            "action": "open safe",
+            "message": "The safe holds two documents: papers about Baxter's involvement in the Focus scandal, and a new will that leaves George nothing and gives Robner's estate to his wife.",
+            "room": "library"
+          },
+          {
+            "action": "read Focus papers",
+            "message": "The papers document Baxter's embezzlement of Focus funds and the company's effort to hush up the scandal. Robner's records describe how the matter was handled.",
+            "room": "library"
+          },
+          {
+            "action": "go to kitchen",
+            "message": "You enter the kitchen.",
+            "room": "kitchen"
+          },
+          {
+            "action": "count china",
+            "message": "There are eight large and small plates, seven saucers, and six cups.",
+            "room": "kitchen"
+          },
+          {
+            "action": "go to garden",
+            "message": "You enter the garden.",
+            "room": "garden"
+          },
+          {
+            "action": "inspect holes",
+            "message": "There are two holes in the soft earth, each about two inches by four inches and at least three inches deep. The soil around them is compacted.",
+            "room": "garden"
+          },
+          {
+            "action": "search holes",
+            "message": "Digging in the soft earth, you cut your finger on a sharp edge and find a piece of porcelain covered in dirt and dried mud.",
+            "room": "garden"
+          }
+        ],
+        "successfulActions": 19,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "search holes",
+        "valid": true,
+        "message": "Digging in the soft earth, you cut your finger on a sharp edge and find a piece of porcelain covered in dirt and dried mud."
+      },
+      "action": "clean fragment",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "As you wipe off the porcelain, its hand-painted design becomes visible.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 20,
+        "submittedCalls": 20
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "garden",
+        "roomText": "Rows of roses fill the garden beside the house.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "clean",
+          "analyze"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo",
+          "Focus papers",
+          "new will",
+          "fragment"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Shading the page reveals impressions left by writing on the previous sheet. The writer pressed hard, but only fragments are legible: ‘Baxter,’ ‘merg...,’ ‘Omnidyne,’ ‘Focus,’ and ‘recons...’.",
+            "room": "library"
+          },
+          {
+            "action": "inspect bookcase",
+            "message": "The books are carefully arranged. One section is slightly out of line.",
+            "room": "library"
+          },
+          {
+            "action": "search bookcase",
+            "message": "Behind the shifted books you find a concealed safe.",
+            "room": "library"
+          },
+          {
+            "action": "open safe",
+            "message": "The safe holds two documents: papers about Baxter's involvement in the Focus scandal, and a new will that leaves George nothing and gives Robner's estate to his wife.",
+            "room": "library"
+          },
+          {
+            "action": "read Focus papers",
+            "message": "The papers document Baxter's embezzlement of Focus funds and the company's effort to hush up the scandal. Robner's records describe how the matter was handled.",
+            "room": "library"
+          },
+          {
+            "action": "go to kitchen",
+            "message": "You enter the kitchen.",
+            "room": "kitchen"
+          },
+          {
+            "action": "count china",
+            "message": "There are eight large and small plates, seven saucers, and six cups.",
+            "room": "kitchen"
+          },
+          {
+            "action": "go to garden",
+            "message": "You enter the garden.",
+            "room": "garden"
+          },
+          {
+            "action": "inspect holes",
+            "message": "There are two holes in the soft earth, each about two inches by four inches and at least three inches deep. The soil around them is compacted.",
+            "room": "garden"
+          },
+          {
+            "action": "search holes",
+            "message": "Digging in the soft earth, you cut your finger on a sharp edge and find a piece of porcelain covered in dirt and dried mud.",
+            "room": "garden"
+          },
+          {
+            "action": "clean fragment",
+            "message": "As you wipe off the porcelain, its hand-painted design becomes visible.",
+            "room": "garden"
+          }
+        ],
+        "successfulActions": 20,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "clean fragment",
+        "valid": true,
+        "message": "As you wipe off the porcelain, its hand-painted design becomes visible."
+      },
+      "action": "analyze fragment",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "The lab finds traces of tea and sugar, along with another chemical not commonly used as medication. It is not Amitraxin (Ebullion). No clear fingerprints remain.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 21,
+        "submittedCalls": 21
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "garden",
+        "roomText": "Rows of roses fill the garden beside the house.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "clean",
+          "analyze",
+          "compare"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo",
+          "Focus papers",
+          "new will",
+          "fragment"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Shading the page reveals impressions left by writing on the previous sheet. The writer pressed hard, but only fragments are legible: ‘Baxter,’ ‘merg...,’ ‘Omnidyne,’ ‘Focus,’ and ‘recons...’.",
+            "room": "library"
+          },
+          {
+            "action": "inspect bookcase",
+            "message": "The books are carefully arranged. One section is slightly out of line.",
+            "room": "library"
+          },
+          {
+            "action": "search bookcase",
+            "message": "Behind the shifted books you find a concealed safe.",
+            "room": "library"
+          },
+          {
+            "action": "open safe",
+            "message": "The safe holds two documents: papers about Baxter's involvement in the Focus scandal, and a new will that leaves George nothing and gives Robner's estate to his wife.",
+            "room": "library"
+          },
+          {
+            "action": "read Focus papers",
+            "message": "The papers document Baxter's embezzlement of Focus funds and the company's effort to hush up the scandal. Robner's records describe how the matter was handled.",
+            "room": "library"
+          },
+          {
+            "action": "go to kitchen",
+            "message": "You enter the kitchen.",
+            "room": "kitchen"
+          },
+          {
+            "action": "count china",
+            "message": "There are eight large and small plates, seven saucers, and six cups.",
+            "room": "kitchen"
+          },
+          {
+            "action": "go to garden",
+            "message": "You enter the garden.",
+            "room": "garden"
+          },
+          {
+            "action": "inspect holes",
+            "message": "There are two holes in the soft earth, each about two inches by four inches and at least three inches deep. The soil around them is compacted.",
+            "room": "garden"
+          },
+          {
+            "action": "search holes",
+            "message": "Digging in the soft earth, you cut your finger on a sharp edge and find a piece of porcelain covered in dirt and dried mud.",
+            "room": "garden"
+          },
+          {
+            "action": "clean fragment",
+            "message": "As you wipe off the porcelain, its hand-painted design becomes visible.",
+            "room": "garden"
+          },
+          {
+            "action": "analyze fragment",
+            "message": "The lab finds traces of tea and sugar, along with another chemical not commonly used as medication. It is not Amitraxin (Ebullion). No clear fingerprints remain.",
+            "room": "garden"
+          }
+        ],
+        "successfulActions": 21,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "analyze fragment",
+        "valid": true,
+        "message": "The lab finds traces of tea and sugar, along with another chemical not commonly used as medication. It is not Amitraxin (Ebullion). No clear fingerprints remain."
+      },
+      "action": "compare fragment with LoBlo",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "The lab identifies Methsparin, sold as LoBlo, on the fragment. A recheck finds a high level of Methsparin in Robner's blood. The report describes how Methsparin displaces Ebullion from protein binding, leaving more free Ebullion in the blood and simulating an overdose. The pathologist attributes death to Ebullion toxicity after ingestion of both medicines.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 22,
+        "submittedCalls": 22
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "garden",
+        "roomText": "Rows of roses fill the garden beside the house.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "clean",
+          "analyze",
+          "compare",
+          "accuse"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo",
+          "Focus papers",
+          "new will",
+          "fragment"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "“Ah, that must be Ms. Dunbar's ticket stub. I should have told you earlier. Ms. Dunbar was with me at the concert on the night that Marshall killed himself. She became ill at intermission and hired a car to take her back home. You see, Inspector, I know that Ms. Dunbar appreciates classical music, so I occasionally ask her along to my subscription series. I really should have told the other detective, but I didn't think it mattered.”",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "“Oh, I...well, I guess I should tell you. You see, Mr. Baxter and I, we go together to concerts, only occasionally, you understand. We went that night, the night Marshall died. Then he took me home and that's it. I should have said something before, but I just didn't think it was important, and, well, I didn't think that the others should know we were seeing each other socially. Our...nobody knows about it, you know. Please don't say anything!”",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Shading the page reveals impressions left by writing on the previous sheet. The writer pressed hard, but only fragments are legible: ‘Baxter,’ ‘merg...,’ ‘Omnidyne,’ ‘Focus,’ and ‘recons...’.",
+            "room": "library"
+          },
+          {
+            "action": "inspect bookcase",
+            "message": "The books are carefully arranged. One section is slightly out of line.",
+            "room": "library"
+          },
+          {
+            "action": "search bookcase",
+            "message": "Behind the shifted books you find a concealed safe.",
+            "room": "library"
+          },
+          {
+            "action": "open safe",
+            "message": "The safe holds two documents: papers about Baxter's involvement in the Focus scandal, and a new will that leaves George nothing and gives Robner's estate to his wife.",
+            "room": "library"
+          },
+          {
+            "action": "read Focus papers",
+            "message": "The papers document Baxter's embezzlement of Focus funds and the company's effort to hush up the scandal. Robner's records describe how the matter was handled.",
+            "room": "library"
+          },
+          {
+            "action": "go to kitchen",
+            "message": "You enter the kitchen.",
+            "room": "kitchen"
+          },
+          {
+            "action": "count china",
+            "message": "There are eight large and small plates, seven saucers, and six cups.",
+            "room": "kitchen"
+          },
+          {
+            "action": "go to garden",
+            "message": "You enter the garden.",
+            "room": "garden"
+          },
+          {
+            "action": "inspect holes",
+            "message": "There are two holes in the soft earth, each about two inches by four inches and at least three inches deep. The soil around them is compacted.",
+            "room": "garden"
+          },
+          {
+            "action": "search holes",
+            "message": "Digging in the soft earth, you cut your finger on a sharp edge and find a piece of porcelain covered in dirt and dried mud.",
+            "room": "garden"
+          },
+          {
+            "action": "clean fragment",
+            "message": "As you wipe off the porcelain, its hand-painted design becomes visible.",
+            "room": "garden"
+          },
+          {
+            "action": "analyze fragment",
+            "message": "The lab finds traces of tea and sugar, along with another chemical not commonly used as medication. It is not Amitraxin (Ebullion). No clear fingerprints remain.",
+            "room": "garden"
+          },
+          {
+            "action": "compare fragment with LoBlo",
+            "message": "The lab identifies Methsparin, sold as LoBlo, on the fragment. A recheck finds a high level of Methsparin in Robner's blood. The report describes how Methsparin displaces Ebullion from protein binding, leaving more free Ebullion in the blood and simulating an overdose. The pathologist attributes death to Ebullion toxicity after ingestion of both medicines.",
+            "room": "garden"
+          }
+        ],
+        "successfulActions": 22,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "compare fragment with LoBlo",
+        "valid": true,
+        "message": "The lab identifies Methsparin, sold as LoBlo, on the fragment. A recheck finds a high level of Methsparin in Robner's blood. The report describes how Methsparin displaces Ebullion from protein binding, leaving more free Ebullion in the blood and simulating an overdose. The pathologist attributes death to Ebullion toxicity after ingestion of both medicines."
+      },
+      "action": "accuse Baxter and Dunbar",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "The case record identifies Baxter as the planner and Dunbar as the person who put LoBlo in Robner's tea. The medicine interaction caused fatal Ebullion toxicity. Baxter used the ladder route and switched the cup after Robner died.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "terminal",
+        "reason": "complete_solution",
+        "message": "The case record identifies Baxter as the planner and Dunbar as the person who put LoBlo in Robner's tea. The medicine interaction caused fatal Ebullion toxicity. Baxter used the ladder route and switched the cup after Robner died.",
+        "score": 1,
+        "successfulActions": 23,
+        "submittedCalls": 23
+      }
+    }
+  ],
+  "startedAt": "2026-11-03T00:04:59.357Z",
+  "outcome": {
+    "status": "terminal",
+    "reason": "complete_solution",
+    "message": "The case record identifies Baxter as the planner and Dunbar as the person who put LoBlo in Robner's tea. The medicine interaction caused fatal Ebullion toxicity. Baxter used the ladder route and switched the cup after Robner died.",
+    "score": 1,
+    "successfulActions": 23,
+    "submittedCalls": 23
+  },
+  "modelCalls": 0,
+  "finishedAt": "2026-11-03T00:04:59.360Z"
+}

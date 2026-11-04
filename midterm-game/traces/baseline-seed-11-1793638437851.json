@@ -1,0 +1,1751 @@
+{
+  "seed": 11,
+  "provider": "baseline",
+  "model": "fixed-evidence-policy",
+  "maxActions": 30,
+  "maxCalls": 60,
+  "timeoutMs": 60000,
+  "calls": [
+    {
+      "observation": {
+        "player": "detective",
+        "room": "living room",
+        "roomText": "Four residents wait under the watch of a uniformed patrol officer. Mrs. Robner looks tense. The officer remains with the group while you investigate.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "interview",
+          "ask"
+        ],
+        "interviewee": null,
+        "letterDelivered": false,
+        "evidence": [],
+        "clues": [],
+        "history": [],
+        "successfulActions": 0,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": null,
+      "action": "interview Baxter privately",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 1,
+        "submittedCalls": 1
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "return",
+          "search",
+          "ask"
+        ],
+        "interviewee": "Baxter",
+        "letterDelivered": false,
+        "evidence": [],
+        "clues": [],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 1,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "interview Baxter privately",
+        "valid": true,
+        "message": "Baxter agrees to speak privately in the Library. The officer stays with the others."
+      },
+      "action": "ask Baxter about concert",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Dunbar became ill and left early; I took her home.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 2,
+        "submittedCalls": 2
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "return",
+          "search",
+          "ask"
+        ],
+        "interviewee": "Baxter",
+        "letterDelivered": false,
+        "evidence": [],
+        "clues": [],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "Dunbar became ill and left early; I took her home.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 2,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "ask Baxter about concert",
+        "valid": true,
+        "message": "Dunbar became ill and left early; I took her home."
+      },
+      "action": "return Baxter to living room",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 3,
+        "submittedCalls": 3
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "living room",
+        "roomText": "Four residents wait under the watch of a uniformed patrol officer. Mrs. Robner looks tense. The officer remains with the group while you investigate.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "read",
+          "search",
+          "interview",
+          "ask"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [],
+        "clues": [],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "Dunbar became ill and left early; I took her home.",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          }
+        ],
+        "successfulActions": 3,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "return Baxter to living room",
+        "valid": true,
+        "message": "Baxter returns to the officer and the group. A delivered letter is on the table."
+      },
+      "action": "interview Dunbar privately",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 4,
+        "submittedCalls": 4
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "return",
+          "search",
+          "ask"
+        ],
+        "interviewee": "Dunbar",
+        "letterDelivered": true,
+        "evidence": [],
+        "clues": [],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "Dunbar became ill and left early; I took her home.",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 4,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "interview Dunbar privately",
+        "valid": true,
+        "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others."
+      },
+      "action": "ask Dunbar about concert",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Baxter and I attended together, and he took me home afterward.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 5,
+        "submittedCalls": 5
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "return",
+          "search",
+          "ask"
+        ],
+        "interviewee": "Dunbar",
+        "letterDelivered": true,
+        "evidence": [],
+        "clues": [
+          "concert_contradiction"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "Dunbar became ill and left early; I took her home.",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "Baxter and I attended together, and he took me home afterward.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 5,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "ask Dunbar about concert",
+        "valid": true,
+        "message": "Baxter and I attended together, and he took me home afterward."
+      },
+      "action": "search Dunbar",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 6,
+        "submittedCalls": 6
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "return",
+          "search",
+          "ask",
+          "show"
+        ],
+        "interviewee": "Dunbar",
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo"
+        ],
+        "clues": [
+          "concert_contradiction"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "Dunbar became ill and left early; I took her home.",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "Baxter and I attended together, and he took me home afterward.",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 6,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "search Dunbar",
+        "valid": true,
+        "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings."
+      },
+      "action": "return Dunbar to living room",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 7,
+        "submittedCalls": 7
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "living room",
+        "roomText": "Four residents wait under the watch of a uniformed patrol officer. Mrs. Robner looks tense. The officer remains with the group while you investigate.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "read",
+          "search",
+          "interview",
+          "ask",
+          "show"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo"
+        ],
+        "clues": [
+          "concert_contradiction"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "Dunbar became ill and left early; I took her home.",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "Baxter and I attended together, and he took me home afterward.",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          }
+        ],
+        "successfulActions": 7,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "return Dunbar to living room",
+        "valid": true,
+        "message": "Dunbar returns to the officer and the group. A delivered letter is on the table."
+      },
+      "action": "go to library",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "You enter the library.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 8,
+        "submittedCalls": 8
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo"
+        ],
+        "clues": [
+          "concert_contradiction"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "Dunbar became ill and left early; I took her home.",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "Baxter and I attended together, and he took me home afterward.",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 8,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "go to library",
+        "valid": true,
+        "message": "You enter the library."
+      },
+      "action": "inspect notepad",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 9,
+        "submittedCalls": 9
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "shade"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo"
+        ],
+        "clues": [
+          "concert_contradiction",
+          "notepad_inspected"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "Dunbar became ill and left early; I took her home.",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "Baxter and I attended together, and he took me home afterward.",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 9,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "inspect notepad",
+        "valid": true,
+        "message": "The page looks blank, but shallow pressure marks remain in the paper."
+      },
+      "action": "shade notepad with pencil",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Pencil shading brings out an impression mentioning Baxter and Focus.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 10,
+        "submittedCalls": 10
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "library",
+        "roomText": "Marshall Robner lies beside a tea service. A bottle of Ebullion and a writing desk are nearby.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "shade"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo"
+        ],
+        "clues": [
+          "concert_contradiction",
+          "notepad_inspected",
+          "baxter_motive"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "Dunbar became ill and left early; I took her home.",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "Baxter and I attended together, and he took me home afterward.",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Pencil shading brings out an impression mentioning Baxter and Focus.",
+            "room": "library"
+          }
+        ],
+        "successfulActions": 10,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "shade notepad with pencil",
+        "valid": true,
+        "message": "Pencil shading brings out an impression mentioning Baxter and Focus."
+      },
+      "action": "go to kitchen",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "You enter the kitchen.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 11,
+        "submittedCalls": 11
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "kitchen",
+        "roomText": "The tea service is stored here. One place in the set looks oddly empty.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "count"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo"
+        ],
+        "clues": [
+          "concert_contradiction",
+          "notepad_inspected",
+          "baxter_motive"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "Dunbar became ill and left early; I took her home.",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "Baxter and I attended together, and he took me home afterward.",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Pencil shading brings out an impression mentioning Baxter and Focus.",
+            "room": "library"
+          },
+          {
+            "action": "go to kitchen",
+            "message": "You enter the kitchen.",
+            "room": "kitchen"
+          }
+        ],
+        "successfulActions": 11,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "go to kitchen",
+        "valid": true,
+        "message": "You enter the kitchen."
+      },
+      "action": "count china",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "There are six cups and seven saucers, suggesting a cup was removed or switched.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 12,
+        "submittedCalls": 12
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "kitchen",
+        "roomText": "The tea service is stored here. One place in the set looks oddly empty.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "count"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo"
+        ],
+        "clues": [
+          "concert_contradiction",
+          "notepad_inspected",
+          "baxter_motive",
+          "china_counted"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "Dunbar became ill and left early; I took her home.",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "Baxter and I attended together, and he took me home afterward.",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Pencil shading brings out an impression mentioning Baxter and Focus.",
+            "room": "library"
+          },
+          {
+            "action": "go to kitchen",
+            "message": "You enter the kitchen.",
+            "room": "kitchen"
+          },
+          {
+            "action": "count china",
+            "message": "There are six cups and seven saucers, suggesting a cup was removed or switched.",
+            "room": "kitchen"
+          }
+        ],
+        "successfulActions": 12,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "count china",
+        "valid": true,
+        "message": "There are six cups and seven saucers, suggesting a cup was removed or switched."
+      },
+      "action": "go to garden",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "You enter the garden.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 13,
+        "submittedCalls": 13
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "garden",
+        "roomText": "The flower beds below the Library window have been disturbed.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo"
+        ],
+        "clues": [
+          "concert_contradiction",
+          "notepad_inspected",
+          "baxter_motive",
+          "china_counted"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "Dunbar became ill and left early; I took her home.",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "Baxter and I attended together, and he took me home afterward.",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Pencil shading brings out an impression mentioning Baxter and Focus.",
+            "room": "library"
+          },
+          {
+            "action": "go to kitchen",
+            "message": "You enter the kitchen.",
+            "room": "kitchen"
+          },
+          {
+            "action": "count china",
+            "message": "There are six cups and seven saucers, suggesting a cup was removed or switched.",
+            "room": "kitchen"
+          },
+          {
+            "action": "go to garden",
+            "message": "You enter the garden.",
+            "room": "garden"
+          }
+        ],
+        "successfulActions": 13,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "go to garden",
+        "valid": true,
+        "message": "You enter the garden."
+      },
+      "action": "inspect holes",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Compacted ladder holes and crushed flowers sit below the Library window.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 14,
+        "submittedCalls": 14
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "garden",
+        "roomText": "The flower beds below the Library window have been disturbed.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo"
+        ],
+        "clues": [
+          "concert_contradiction",
+          "notepad_inspected",
+          "baxter_motive",
+          "china_counted",
+          "ladder_holes"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "Dunbar became ill and left early; I took her home.",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "Baxter and I attended together, and he took me home afterward.",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Pencil shading brings out an impression mentioning Baxter and Focus.",
+            "room": "library"
+          },
+          {
+            "action": "go to kitchen",
+            "message": "You enter the kitchen.",
+            "room": "kitchen"
+          },
+          {
+            "action": "count china",
+            "message": "There are six cups and seven saucers, suggesting a cup was removed or switched.",
+            "room": "kitchen"
+          },
+          {
+            "action": "go to garden",
+            "message": "You enter the garden.",
+            "room": "garden"
+          },
+          {
+            "action": "inspect holes",
+            "message": "Compacted ladder holes and crushed flowers sit below the Library window.",
+            "room": "garden"
+          }
+        ],
+        "successfulActions": 14,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "inspect holes",
+        "valid": true,
+        "message": "Compacted ladder holes and crushed flowers sit below the Library window."
+      },
+      "action": "search holes",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "A patterned porcelain fragment lies in the disturbed soil.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 15,
+        "submittedCalls": 15
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "garden",
+        "roomText": "The flower beds below the Library window have been disturbed.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "clean"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo",
+          "fragment"
+        ],
+        "clues": [
+          "concert_contradiction",
+          "notepad_inspected",
+          "baxter_motive",
+          "china_counted",
+          "ladder_holes"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "Dunbar became ill and left early; I took her home.",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "Baxter and I attended together, and he took me home afterward.",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Pencil shading brings out an impression mentioning Baxter and Focus.",
+            "room": "library"
+          },
+          {
+            "action": "go to kitchen",
+            "message": "You enter the kitchen.",
+            "room": "kitchen"
+          },
+          {
+            "action": "count china",
+            "message": "There are six cups and seven saucers, suggesting a cup was removed or switched.",
+            "room": "kitchen"
+          },
+          {
+            "action": "go to garden",
+            "message": "You enter the garden.",
+            "room": "garden"
+          },
+          {
+            "action": "inspect holes",
+            "message": "Compacted ladder holes and crushed flowers sit below the Library window.",
+            "room": "garden"
+          },
+          {
+            "action": "search holes",
+            "message": "A patterned porcelain fragment lies in the disturbed soil.",
+            "room": "garden"
+          }
+        ],
+        "successfulActions": 15,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "search holes",
+        "valid": true,
+        "message": "A patterned porcelain fragment lies in the disturbed soil."
+      },
+      "action": "clean fragment",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "Cleaning exposes tea and sugar residue with an unfamiliar chemical trace.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 16,
+        "submittedCalls": 16
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "garden",
+        "roomText": "The flower beds below the Library window have been disturbed.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "clean",
+          "analyze"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo",
+          "fragment"
+        ],
+        "clues": [
+          "concert_contradiction",
+          "notepad_inspected",
+          "baxter_motive",
+          "china_counted",
+          "ladder_holes",
+          "fragment_cleaned"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "Dunbar became ill and left early; I took her home.",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "Baxter and I attended together, and he took me home afterward.",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Pencil shading brings out an impression mentioning Baxter and Focus.",
+            "room": "library"
+          },
+          {
+            "action": "go to kitchen",
+            "message": "You enter the kitchen.",
+            "room": "kitchen"
+          },
+          {
+            "action": "count china",
+            "message": "There are six cups and seven saucers, suggesting a cup was removed or switched.",
+            "room": "kitchen"
+          },
+          {
+            "action": "go to garden",
+            "message": "You enter the garden.",
+            "room": "garden"
+          },
+          {
+            "action": "inspect holes",
+            "message": "Compacted ladder holes and crushed flowers sit below the Library window.",
+            "room": "garden"
+          },
+          {
+            "action": "search holes",
+            "message": "A patterned porcelain fragment lies in the disturbed soil.",
+            "room": "garden"
+          },
+          {
+            "action": "clean fragment",
+            "message": "Cleaning exposes tea and sugar residue with an unfamiliar chemical trace.",
+            "room": "garden"
+          }
+        ],
+        "successfulActions": 16,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "clean fragment",
+        "valid": true,
+        "message": "Cleaning exposes tea and sugar residue with an unfamiliar chemical trace."
+      },
+      "action": "analyze fragment",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "The lab finds tea, sugar, and a poison-like chemical. Compare it with available medicines.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 17,
+        "submittedCalls": 17
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "garden",
+        "roomText": "The flower beds below the Library window have been disturbed.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "clean",
+          "analyze",
+          "compare"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo",
+          "fragment"
+        ],
+        "clues": [
+          "concert_contradiction",
+          "notepad_inspected",
+          "baxter_motive",
+          "china_counted",
+          "ladder_holes",
+          "fragment_cleaned",
+          "fragment_analyzed"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "Dunbar became ill and left early; I took her home.",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "Baxter and I attended together, and he took me home afterward.",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Pencil shading brings out an impression mentioning Baxter and Focus.",
+            "room": "library"
+          },
+          {
+            "action": "go to kitchen",
+            "message": "You enter the kitchen.",
+            "room": "kitchen"
+          },
+          {
+            "action": "count china",
+            "message": "There are six cups and seven saucers, suggesting a cup was removed or switched.",
+            "room": "kitchen"
+          },
+          {
+            "action": "go to garden",
+            "message": "You enter the garden.",
+            "room": "garden"
+          },
+          {
+            "action": "inspect holes",
+            "message": "Compacted ladder holes and crushed flowers sit below the Library window.",
+            "room": "garden"
+          },
+          {
+            "action": "search holes",
+            "message": "A patterned porcelain fragment lies in the disturbed soil.",
+            "room": "garden"
+          },
+          {
+            "action": "clean fragment",
+            "message": "Cleaning exposes tea and sugar residue with an unfamiliar chemical trace.",
+            "room": "garden"
+          },
+          {
+            "action": "analyze fragment",
+            "message": "The lab finds tea, sugar, and a poison-like chemical. Compare it with available medicines.",
+            "room": "garden"
+          }
+        ],
+        "successfulActions": 17,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "analyze fragment",
+        "valid": true,
+        "message": "The lab finds tea, sugar, and a poison-like chemical. Compare it with available medicines."
+      },
+      "action": "compare fragment with LoBlo",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "The fragment contains LoBlo. In combination with Robner's Ebullion, it explains a fatal poisoning.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "ongoing",
+        "reason": "investigation_open",
+        "score": null,
+        "successfulActions": 18,
+        "submittedCalls": 18
+      }
+    },
+    {
+      "observation": {
+        "player": "detective",
+        "room": "garden",
+        "roomText": "The flower beds below the Library window have been disturbed.",
+        "actionWords": [
+          "go to",
+          "inspect",
+          "search",
+          "clean",
+          "analyze",
+          "compare",
+          "accuse"
+        ],
+        "interviewee": null,
+        "letterDelivered": true,
+        "evidence": [
+          "LoBlo",
+          "fragment"
+        ],
+        "clues": [
+          "concert_contradiction",
+          "notepad_inspected",
+          "baxter_motive",
+          "china_counted",
+          "ladder_holes",
+          "fragment_cleaned",
+          "fragment_analyzed",
+          "poison_confirmed"
+        ],
+        "history": [
+          {
+            "action": "interview Baxter privately",
+            "message": "Baxter agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Baxter about concert",
+            "message": "Dunbar became ill and left early; I took her home.",
+            "room": "library"
+          },
+          {
+            "action": "return Baxter to living room",
+            "message": "Baxter returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "interview Dunbar privately",
+            "message": "Dunbar agrees to speak privately in the Library. The officer stays with the others.",
+            "room": "library"
+          },
+          {
+            "action": "ask Dunbar about concert",
+            "message": "Baxter and I attended together, and he took me home afterward.",
+            "room": "library"
+          },
+          {
+            "action": "search Dunbar",
+            "message": "Dunbar consents to the search. You find a bottle of LoBlo among her belongings.",
+            "room": "library"
+          },
+          {
+            "action": "return Dunbar to living room",
+            "message": "Dunbar returns to the officer and the group. A delivered letter is on the table.",
+            "room": "living room"
+          },
+          {
+            "action": "go to library",
+            "message": "You enter the library.",
+            "room": "library"
+          },
+          {
+            "action": "inspect notepad",
+            "message": "The page looks blank, but shallow pressure marks remain in the paper.",
+            "room": "library"
+          },
+          {
+            "action": "shade notepad with pencil",
+            "message": "Pencil shading brings out an impression mentioning Baxter and Focus.",
+            "room": "library"
+          },
+          {
+            "action": "go to kitchen",
+            "message": "You enter the kitchen.",
+            "room": "kitchen"
+          },
+          {
+            "action": "count china",
+            "message": "There are six cups and seven saucers, suggesting a cup was removed or switched.",
+            "room": "kitchen"
+          },
+          {
+            "action": "go to garden",
+            "message": "You enter the garden.",
+            "room": "garden"
+          },
+          {
+            "action": "inspect holes",
+            "message": "Compacted ladder holes and crushed flowers sit below the Library window.",
+            "room": "garden"
+          },
+          {
+            "action": "search holes",
+            "message": "A patterned porcelain fragment lies in the disturbed soil.",
+            "room": "garden"
+          },
+          {
+            "action": "clean fragment",
+            "message": "Cleaning exposes tea and sugar residue with an unfamiliar chemical trace.",
+            "room": "garden"
+          },
+          {
+            "action": "analyze fragment",
+            "message": "The lab finds tea, sugar, and a poison-like chemical. Compare it with available medicines.",
+            "room": "garden"
+          },
+          {
+            "action": "compare fragment with LoBlo",
+            "message": "The fragment contains LoBlo. In combination with Robner's Ebullion, it explains a fatal poisoning.",
+            "room": "garden"
+          }
+        ],
+        "successfulActions": 18,
+        "actionLimit": 30,
+        "terminal": null
+      },
+      "previousActionFeedback": {
+        "action": "compare fragment with LoBlo",
+        "valid": true,
+        "message": "The fragment contains LoBlo. In combination with Robner's Ebullion, it explains a fatal poisoning."
+      },
+      "action": "accuse Baxter and Dunbar",
+      "rawOutput": null,
+      "source": "baseline",
+      "valid": true,
+      "message": "The evidence supports a conspiracy: Dunbar administered LoBlo, and Baxter's motive and cover-up connect him to the murder.",
+      "latencyMs": 0,
+      "usage": null,
+      "outcome": {
+        "status": "terminal",
+        "reason": "complete_solution",
+        "message": "The evidence supports a conspiracy: Dunbar administered LoBlo, and Baxter's motive and cover-up connect him to the murder.",
+        "score": 1,
+        "successfulActions": 19,
+        "submittedCalls": 19
+      }
+    }
+  ],
+  "startedAt": "2026-11-02T16:53:57.848Z",
+  "outcome": {
+    "status": "terminal",
+    "reason": "complete_solution",
+    "message": "The evidence supports a conspiracy: Dunbar administered LoBlo, and Baxter's motive and cover-up connect him to the murder.",
+    "score": 1,
+    "successfulActions": 19,
+    "submittedCalls": 19
+  },
+  "modelCalls": 0,
+  "finishedAt": "2026-11-02T16:53:57.850Z"
+}

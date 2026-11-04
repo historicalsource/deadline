@@ -1,53 +1,52 @@
-const hasAction = (history, action) => history.some((entry) => entry.action === action);
+const hasAction = (observation, action) => observation.history.some((entry) => entry.action === action);
 
-// Evidence-first policy with a fixed, inspectable priority order. It uses only
-// the same player observation and legal-action list available to the model.
-export function chooseBaselineAction(observation, legalActions) {
-  const legal = new Set(legalActions);
-  const done = (action) => hasAction(observation.history, action);
-  const choose = (...actions) => actions.find((action) => legal.has(action));
+// A deterministic evidence-first investigator. It infers its next command from
+// visible facts and prior responses; the engine is the only legality oracle.
+export function chooseBaselineAction(observation) {
+  if (observation.choices?.length) return observation.choices.find(({ action }) => action === "close the case")?.action || observation.choices[0].action;
+  const done = (action) => hasAction(observation, action);
   const room = observation.room;
-  const clues = new Set(observation.clues);
   const evidence = new Set(observation.evidence);
 
   if (observation.interviewee) {
     const person = observation.interviewee;
-    const topic = person === "Baxter" || person === "Dunbar" ? "concert" : null;
-    if (topic && !done(`ask ${person} about ${topic}`)) return choose(`ask ${person} about ${topic}`);
-    if (person === "Dunbar" && !evidence.has("LoBlo")) return choose("search Dunbar");
-    return choose(`return ${person} to living room`);
+    if ((person === "Baxter" || person === "Dunbar") && !done(`ask ${person} about concert`)) return `ask ${person} about concert`;
+    if (person === "Dunbar" && !evidence.has("LoBlo")) return "search Dunbar";
+    return `return ${person}`;
   }
 
-  if (!clues.has("concert_contradiction")) {
-    const person = done("interview Baxter privately") && done("ask Baxter about concert") ? "Dunbar" : "Baxter";
-    if (room !== "living room") return choose("go to living room");
-    if (!done(`interview ${person} privately`)) return choose(`interview ${person} privately`);
-    if (!done(`ask ${person} about concert`)) return choose(`interview ${person} privately`);
+  if (!done("ask Baxter about concert") || !done("ask Dunbar about concert")) {
+    const person = done("ask Baxter about concert") ? "Dunbar" : "Baxter";
+    if (room !== "living room") return "go to living room";
+    if (!done(`interview privately ${person}`)) return `interview privately ${person}`;
+    return `interview privately ${person}`;
   }
   if (!evidence.has("LoBlo")) {
-    if (room !== "living room") return choose("go to living room");
-    if (!done("interview Dunbar privately")) return choose("interview Dunbar privately");
+    if (room !== "living room") return "go to living room";
+    return "interview privately Dunbar";
   }
 
-  if (!clues.has("baxter_motive")) {
-    if (room !== "library") return choose("go to library");
-    if (!clues.has("notepad_inspected")) return choose("inspect notepad");
-    return choose("shade notepad with pencil");
+  if (!done("shade notepad")) {
+    if (room !== "library") return "go to library";
+    if (!done("inspect notepad")) return "inspect notepad";
+    return "shade notepad";
   }
-  if (!clues.has("china_counted")) {
-    if (room !== "kitchen") return choose("go to kitchen");
-    return choose("count china");
+  if (!done("read Focus papers")) {
+    if (room !== "library") return "go to library";
+    if (!done("inspect bookcase")) return "inspect bookcase";
+    if (!done("search bookcase")) return "search bookcase";
+    if (!done("open safe")) return "open safe";
+    return "read Focus papers";
   }
-  if (!clues.has("ladder_holes")) {
-    if (room !== "garden") return choose("go to garden");
-    return choose("inspect holes");
+  if (!done("count china")) return room === "kitchen" ? "count china" : "go to kitchen";
+  if (!done("inspect holes")) return room === "garden" ? "inspect holes" : "go to garden";
+  if (!done("compare new chemical with LoBlo")) {
+    if (room !== "garden") return "go to garden";
+    if (!evidence.has("porcelain fragment")) return "search holes";
+    if (!done("clean fragment")) return "clean fragment";
+    if (!done("analyze fragment")) return "analyze fragment";
+    return "compare new chemical with LoBlo";
   }
-  if (!clues.has("poison_confirmed")) {
-    if (room !== "garden") return choose("go to garden");
-    if (!evidence.has("fragment")) return choose("search holes");
-    if (!clues.has("fragment_cleaned")) return choose("clean fragment");
-    if (!clues.has("fragment_analyzed")) return choose("analyze fragment");
-    return choose("compare fragment with LoBlo");
-  }
-  return choose("accuse Baxter and Dunbar");
+  if (room !== "living room") return "go to living room";
+  return "accuse Baxter and Dunbar";
 }

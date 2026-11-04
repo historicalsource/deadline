@@ -1,22 +1,50 @@
 # The Robner Case
 
-A short, text-based investigation of Marshall Robner's death. The adaptation
-uses four suspects and four rooms, a compact evidence chain, private
-interviews, and several rule-driven endings. The interface is deliberately
-quiet and text-first; all actions come from the engine's legal-action list.
+A short, text-based investigation of Marshall Robner's death. This quick start
+is for classmates who want to install the project and play the game themselves.
 
-## Run it
+## Quick start: play the game yourself
 
-Requires Node.js 20 or newer and npm.
+Requires Node.js 20 or newer and npm. From the repository root, run:
 
 ```sh
-npm install
+cd deadline/midterm-game
+npm ci
 npm run dev
 ```
 
-Open the local URL printed by Vite (normally `http://127.0.0.1:5173/`). The
-browser game runs the authoritative engine locally. Select an available action
-to investigate; use **New investigation** to reset.
+Open the local address Vite prints, usually <http://127.0.0.1:5173/>. Click
+**Begin the investigation** after the introduction. On each turn, choose an
+available action word, fill in the rest of the command using the scene and
+clues, then press **Try this action**. The game does not show a list of valid
+targets or complete commands: guessing is part of the investigation. If a
+command is invalid, read the response and try another; it will not advance the
+case. Use the notes on the right to review suspects, rooms, and evidence.
+
+After accusing someone, choose **Close the case** to see the result or
+**Continue investigating** to keep playing. **Restart** begins a new case.
+**TRUTH** reveals the full solution and contains spoilers.
+
+This is a manual playtest: play through the browser at your own pace and try
+actions based on the story and clues. You do not need to run a script or set up
+a model API. For feedback, note what you tried, what happened, and anything
+that was unclear; keep those notes separate from automated test results.
+The automated-player instructions below are for optional project evaluation;
+they are not part of the manual playtest.
+
+## Inspect and test the engine
+
+While `npm run dev` is running, open
+[`http://127.0.0.1:5173/test`](http://127.0.0.1:5173/test). The local Engine
+Inspector can jump to named checkpoints, show the complete current engine
+state alongside the player observation, list and submit every currently legal
+command, accept arbitrary command guesses, and display the resulting feedback,
+history, and terminal outcome. Presets include the major evidence stages,
+the accusation outcomes, the baseline's complete solution, and an action-limit
+episode. It does not enumerate every combinatorial state; load a checkpoint
+and continue testing from there. This developer page exposes hidden state and
+full legal actions, so it is for local inspection only, not part of player
+observations or the game interface.
 
 ## Engine and commands
 
@@ -30,22 +58,31 @@ game.step("detective", action)
 game.outcome()
 ```
 
-The engine owns the case state and validates every action. Invalid actions do
+The engine owns the case state and validates every action. `legal_actions()`
+is available for engine-level rule checks and deterministic tests; it is not
+provided to a human or machine player. The observation's `actionWords` field
+contains available command heads only. Invalid actions do
 not consume a successful action or change evidence/location; submitted calls
-still count toward the separate call cap. The investigation ends after 30
+still count toward the separate call cap. The investigation ends after 50
 successful actions. The player runner allows at most 60 model calls by default
 and 60 seconds for each request; set `MAX_MODEL_CALLS` or `MODEL_TIMEOUT_MS`
-to change those runner limits. The story's 30-action limit is fixed.
+to change those runner limits. The story's 50-action limit is fixed.
 
-The game starts in the Living Room. Room movement is `go to library`, `go to
-kitchen`, `go to garden`, and `go to living room`. The engine exposes the full
-currently legal command list, including the specified `inspect`, `search`,
-`read`, `ask`, `interview`, `return`, `show`, lab, and accusation actions.
-Private suspect searches occur only in a private interview. Public searches
-are refused. Analyzed Garden-fragment evidence must be compared with LoBlo;
-the complete conclusion additionally requires Dunbar's possession, the two
-private concert accounts, a Baxter motive clue, ladder holes, and the kitchen
-china count.
+The game starts in the Living Room. Movement, investigation, conversation,
+evidence handling, and conclusions are available where the story permits.
+The exact target vocabulary and context rules remain authoritative in the
+engine and project action specification, but player interfaces do not
+enumerate currently valid command combinations. Private suspect searches occur
+only in a private interview. Public searches are refused. Analyzed
+Garden-fragment evidence must be compared with LoBlo. A strong joint
+conclusion also requires Dunbar's LoBlo, both private alibi/concert accounts, a
+shaded notepad, and reading the Focus papers. The Garden-hole inspection and
+Kitchen count are optional observations, not outcome prerequisites.
+Private interviews do not move the detective to a named room; the engine marks
+the interview as a separate scene and returns to the prior room when it ends.
+Unresolved story notices are included in `observation.pendingMessages` and
+remain visible until their related action is completed; the delivered-letter
+notice clears when `read letter` is used.
 
 ## Play and evaluate the players
 
@@ -63,11 +100,12 @@ account:
 OPENAI_API_KEY=... OPENAI_MODEL=... npm run play:model -- --seed 11
 ```
 
-The model receives only its player observation and legal-action strings. The
-model adapter has no filesystem, shell, engine-state, evaluator, or answer-key
-interface. It must return one exact action string; the engine validates the
-submitted action. Provider failures and timeouts are recorded as terminal
-reasons, not silently replaced with a move.
+The model receives only its player observation (including currently available
+action words but no targets or complete commands) and the response to its
+previous attempt. It has no legal-action list, filesystem, shell, engine-state,
+evaluator, or answer-key interface. It must infer the rest of one action
+string; the engine validates the submitted action. Provider failures and
+timeouts are recorded as terminal reasons, not silently replaced with a move.
 
 The same adapter supports Anthropic and Gemini; choose provider/model/key
 through these environment variables and the direct runner command:
@@ -83,16 +121,6 @@ compatible API endpoints. Provider endpoint formats are documented in the
 [Anthropic Messages API](https://platform.claude.com/docs/en/api/messages), and
 [Gemini Interactions API](https://ai.google.dev/api/interactions-api).
 API keys are read from the environment and are not stored in this project.
-
-For human playtesting in a terminal, the playtest agent lists current legal
-actions and accepts an action number or exact action:
-
-```sh
-npm run playtest
-```
-
-The browser UI is also suitable for a human playtest. Record actual notes in a
-separate artifact; none are inferred from automated runs.
 
 ## Tests and CI
 
@@ -117,8 +145,9 @@ reported as green after GitHub provides that evidence.
 
 Included: one case, four suspects (Baxter, Dunbar, George, Mrs. Robner), four
 rooms (Living Room, Library, Kitchen, Garden), a supervised group, voluntary
-private interviews, the evidence chain, optional hidden safe, the incomplete
-Dunbar-case epilogue, and the complete joint accusation.
+private interviews, the evidence chain, optional hidden safe, five distinct
+accusation paths, the incomplete Dunbar-case epilogue, and the
+evidence-dependent joint accusation.
 
 Excluded: the larger cast and timeline, real-time movement, formal arrests,
 ticket-stub evidence, parser synonyms, the combination puzzle, separate
@@ -130,22 +159,23 @@ the case finishable while preserving the approved clue logic.
 | Four suspects, four rooms, opening situation, patrol supervision | `design` | [Story plan: bounded cast and room model](../MIDTERM_STORY_RECONSTRUCTION_PLAN.md#bounded-cast-and-room-model); [action dictionary: state and movement](../ACTION_DICTIONARY_AND_RULES.md#state-and-movement) |
 | Legal actions, contexts, entry-two letter, search and interview behavior | `design` | [Action dictionary: command forms and room actions](../ACTION_DICTIONARY_AND_RULES.md#command-forms); [suspect questions and interviews](../ACTION_DICTIONARY_AND_RULES.md#suspect-questions-and-interviews) |
 | Evidence dependencies and lab results | `design` | [Action dictionary: Library, Kitchen, and Garden actions](../ACTION_DICTIONARY_AND_RULES.md#room-specific-object-actions) |
-| Complete/weak accusations and Dunbar choice ending | `design` | [Action dictionary: accusation outcomes](../ACTION_DICTIONARY_AND_RULES.md#accusation-outcomes); [story plan: incomplete accusation](../MIDTERM_STORY_RECONSTRUCTION_PLAN.md#incomplete-accusation-and-post-case-newspaper-ending) |
-| 30 successful-action episode, 60-call and 60-second runner defaults | `design` | [AGENTS.md settled implementation defaults](../AGENTS.md#design-specifications-and-their-purposes); enforced in `src/engine.js` and `players/run.js` |
+| Five accusation paths, close/continue choice after each accusation, and truth window | `design` | [Action dictionary: accusation outcomes](../ACTION_DICTIONARY_AND_RULES.md#accusation-outcomes); [story plan: accusation case reports and truth window](../MIDTERM_STORY_RECONSTRUCTION_PLAN.md#accusation-case-reports-and-truth-window) |
+| 50 successful-action episode, 60-call and 60-second runner defaults | `design` | [AGENTS.md settled implementation defaults](../AGENTS.md#design-specifications-and-their-purposes); enforced in `src/engine.js` and `players/run.js` |
 | Role-scoped observation and model action boundary | `design` | [AGENTS.md source and implementation constraints](../AGENTS.md#how-to-work); exposed fields are in `src/engine.js`, inputs in `players/model-player.js` |
 | Browser presentation and action ordering | `design` | This implementation's text-first responsive interface in `src/main.js` and `src/style.css` |
 | Fixed-priority baseline policy | `design` | [EVALUATION.md](EVALUATION.md#baseline-and-comparison); `players/baseline.js` |
 
 ### Credit and reuse terms
 
-The game is an original implementation and all player-facing prose is newly
-written. The historical source collection identifies *Deadline* as a 1982
-Infocom game written by Marc Blank and says the contributed source collection
-is not under an open license ([collection README](../README.md), “What is this
-Repository?” and “Purpose”). This project uses approved character names and
-plot facts as an adaptation; it does not copy source code, exact dialogue,
-compiled files, or assets. See the [story evidence notes](../STORY_AND_SUSPECT_EVIDENCE.md)
-for the design's source context.
+The game is an original implementation. The historical source collection
+identifies *Deadline* as a 1982 Infocom game written by Marc Blank and says
+the contributed source collection is not under an open license ([collection
+README](../README.md), “What is this Repository?” and “Purpose”). The student
+confirmed publication permission for source dialogue used in this course
+adaptation. This project does not copy source code, compiled files, or assets.
+See the [story evidence notes](../STORY_AND_SUSPECT_EVIDENCE.md) and [bounded
+route audit](SOURCE_FLOW_AUDIT.md) for source locations and intentional
+differences.
 
 The approved story/action specifications are the authority for this bounded
 adaptation. Rule-map entries use `design` because they are selected or adapted

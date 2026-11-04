@@ -1,14 +1,14 @@
 {
   "game": {
-    "interface": "players receive observe('detective') and legal_actions('detective'); engine validates every submitted step",
-    "successful_action_limit": 30,
+    "interface": "players receive observe('detective') including currently available action-word heads, then submit guessed complete actions to step(); legal_actions() is reserved for engine-level checks and is not sent to players",
+    "successful_action_limit": 50,
     "default_model_call_limit": 60,
     "default_call_timeout_ms": 60000
   },
   "model_player": {
     "entrypoint": "players/model-player.js",
     "providers": ["openai", "anthropic", "gemini"],
-    "inputs": ["player-visible observation", "legal action strings"],
+    "inputs": ["player-visible observation including action-word heads but no complete actions", "feedback on the previous attempted action"],
     "tools": [],
     "filesystem_access": false,
     "shell_access": false,
@@ -19,7 +19,7 @@
   "baseline": {
     "entrypoint": "players/baseline.js",
     "policy": "fixed evidence-first priority order",
-    "interface": "same observations, legal_actions, and step validation as model player"
+    "interface": "chooses from the same observations and prior action history as the model player; engine validates submitted guesses"
   },
   "implementation_skill": "skills/deadline-midterm/SKILL.md",
   "independent_review": {

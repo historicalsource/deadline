@@ -37,22 +37,28 @@ working scope unless the student changes them. Settled defaults include:
 
 - A uniformed patrol officer, unnamed and with no dialogue or clue branch,
   supervises the three suspects remaining in the Living Room while the
-  detective searches other rooms or privately interviews one suspect in the
-  Library. The interviewee is escorted back afterward. This is temporary
-  scene supervision, not a formal arrest; Sergeant Duffy is omitted.
-- After finding the LoBlo/poison connection, accusing Dunbar presents exactly
-  `close the case` and `continue investigating`. Closing produces the
-  incomplete-case newspaper ending in which Dunbar is released on bail and
-  later killed by Baxter; continuing preserves the evidence state and lets
-  the player investigate Baxter. The later murder is epilogue text, not a
-  simulated in-game movement branch.
+  detective searches other rooms or privately interviews one suspect. The
+  interview has no specified location; the interviewee returns to the group
+  afterward. This is temporary scene supervision, not a formal arrest;
+  Sergeant Duffy is omitted.
+- Every accusation opens `close the case` and `continue investigating`,
+  unless that accusation reaches the 50-action or submitted-call limit.
+  Continuing preserves all previously named suspects and
+  evidence; later accusations accumulate in the case record. Closing resolves
+  the accumulated accusation set. If Dunbar is the only true culprit named,
+  the incomplete-case newspaper reports her release on bail and later murder
+  by Baxter. In the truth window, the `Afterward` section appears only when
+  Dunbar is the sole name in the accusation record. The later murder is
+  epilogue text, not a simulated in-game movement branch.
 - The Garden fragment is found with `search holes`. The concert relationship
   and alibi contradiction come from suspect interviews; do not implement a
   ticket-stub item. Use the exact lab actions and results in the action
   dictionary.
-- Use a 30-successful-action episode limit. Invalid actions do not advance
+- Use a 50-successful-action episode limit. Invalid actions do not advance
   game state or consume an in-story action, but each submitted call still
-  counts against the model-call limit.
+  counts against the model-call limit. Reaching the action limit ends the
+  episode immediately, even if the last successful action was an accusation
+  that would otherwise offer the close/continue choice.
 - Default the agent runner to 60 model calls per episode and a 60-second
   timeout per model call. Keep both configurable and report the effective
   values in the evaluation documentation.
